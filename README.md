@@ -1,28 +1,35 @@
-# DiamondSweeper
+# Diamond Sweeper
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+## Problem Statement
 
-## Development server
+The goal of this exercise is to build a game.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The rules of the game are as follows:
 
-## Code scaffolding
+* The game board has 8x8 squares (initially, all represented by question marks)
+* There are 8 diamonds hidden on the board, each diamond behind one of the squares
+* When the user clicks on a square
+    * If the square was hiding a diamond, the diamond appears
+    * Otherwise, the square is opened, and blank
+* The game ends when all diamonds are found. The user's score is the number of squares still left unturned.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Advanced: Adding Hints
 
-## Build
+Part II of this problem adds the ability to add hints to empty squares
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* When the user clicks on a square
+    * If the square was not a diamond, then an arrow appears, pointing towards the nearest diamond
+    * Any arrows that were previously show become hidden
 
-## Running unit tests
+## Requirements:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Angular CLI (the app was built against version 6.1.5).
+* node.js (the app was built against v8.9.4, but any version of node > 8.9 or higher should work).
+* npm ( the app was built against v6.4.1, but any version of npm > 5.5.1 or higher should work).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# DiamondSweeper
+## To start the Application:
+* Download the project and enter the root directory.
+* Install the dependencies (via `npm install`).
+* Start the webserver: `ng serve --open`.
+* Visit `http://localhost:4200` to see the application.
