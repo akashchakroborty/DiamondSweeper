@@ -5,4 +5,34 @@
         </div>
     </div>
 </div>
+<!-- Winner Modal -->
+<button type="button" id="openWinnerModalButton" [hidden]="true" (click)='openModal()'>click to open</button>
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                <h1 class="modal-title">
+                    Congratulations, You won!!!
+                </h1>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Your Score is :
+                    <strong>
+                        <span>{{64-win_count}}</span>
+                    </strong>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" (click)="onCloseHandled()" type="button">
+                    New Game!!!
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
