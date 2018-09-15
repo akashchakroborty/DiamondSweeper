@@ -15,6 +15,46 @@ table {
     background-size: 50px 50px;
 }
 
+@media screen and (max-width: 365px) {
+    .cell {
+        height: 30px;
+        width: 30px;
+        background-size: 30px 30px;
+    }
+}
+
+@media screen and (min-width: 366px) and (max-width: 475px) {
+    .cell {
+        height: 35px;
+        width: 35px;
+        background-size: 35px 35px;
+    }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1280px){
+    .cell {
+        height: 60px;
+        width: 60px;
+        background-size: 60px 60px;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1400px){
+    .cell {
+        height: 80px;
+        width: 80px;
+        background-size: 80px 80px;
+    }
+}
+
+@media screen and (min-width: 1401px){
+    .cell {
+        height: 90px;
+        width: 90px;
+        background-size: 90px 90px;
+    }
+}
+
 .cell.diamond {
       background-image: url(/assets/img/diamond.png);
       background-repeat: no-repeat; 
