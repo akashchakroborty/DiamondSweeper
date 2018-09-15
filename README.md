@@ -33,3 +33,4 @@ Part II of this problem adds the ability to add hints to empty squares
 * Install the dependencies (via `npm install`).
 * Start the webserver: `ng serve --open`.
 * Visit `http://localhost:4200` to see the application.
+* To enable watcher and live reload in tsconfig.json make "compileOnSave": true.
