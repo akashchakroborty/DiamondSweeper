@@ -4,6 +4,10 @@
     text-align: center;
 }
 
+[hidden] { 
+    display: none !important;
+}
+
 table {
     border-spacing: 3px;
     border-collapse: inherit;
@@ -92,3 +96,7 @@ td:hover {
     border: 1px solid skyblue;
     cursor: pointer;
 }  
+
+.disabled{
+    pointer-events: none;
+  }
