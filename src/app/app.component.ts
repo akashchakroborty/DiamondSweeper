@@ -46,6 +46,23 @@ export class AppComponent implements OnInit {
     }
   }
   
+  minDistance(clicked_id) {
+    var distanceMap = {};
+    Object.keys(this.diamond_set).map((id) => {
+      distanceMap[id] = Math.abs(this.cellCordinates[clicked_id].x_cord - this.cellCordinates[id].x_cord) +
+        Math.abs(this.cellCordinates[clicked_id].y_cord - this.cellCordinates[id].y_cord);
+    });
+    let nearestId = Object.keys(distanceMap).sort(function (a, b) {
+      return distanceMap[a] - distanceMap[b]
+    })
+    return nearestId[0];
+  }
+
+  hint(clicked_id) {
+    let nearestDiamondId = this.minDistance(clicked_id);
+    return (Math.atan2((this.cellCordinates[nearestDiamondId].x_cord - this.cellCordinates[clicked_id].x_cord), (this.cellCordinates[nearestDiamondId].y_cord - this.cellCordinates[clicked_id].y_cord))) * 180 / Math.PI;
+  }
+  
   clickHandler = (e) =>{
    if (e.target.nodeName == 'DIV') {
       this.win_count++;
@@ -58,6 +75,12 @@ export class AppComponent implements OnInit {
         if (Object.keys(this.diamond_set).length == 1) {
           alert("One more to go, Go and acheive it");
         }
+      } else {
+        var slope = this.hint(e.target.id);
+        e.target.className = "cell arrow disabled";
+        e.target.style["boxShadow"] = 'none';
+        e.target.style["border"] = 'none';
+        e.target.style["transform"] = "rotate(" + slope + "deg)";
       }
     }
   }
