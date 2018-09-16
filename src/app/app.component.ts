@@ -26,12 +26,23 @@ export class AppComponent implements OnInit {
 
   onCloseHandled() {
     this.display = 'none';
+    this.newGame();
   }
   
   randomGenerators() {
     while (Object.keys(this.diamond_set).length < this.diamond_count) {
       let randomnumber = Math.ceil(Math.random() * 63)
       this.diamond_set[randomnumber] = randomnumber;
+    }
+  }
+  
+  newGame() {
+    this.randomGenerators();
+    this.win_count = 0;
+    let diamonds = document.querySelectorAll(".diamond") as HTMLCollectionOf<HTMLElement>;
+    console.log(diamonds.length);
+    for(let i=0;i<diamonds.length;i++){
+      diamonds[i].className = diamonds[i].className.replace(/\bdiamond disabled\b/g, "unknown");
     }
   }
   
