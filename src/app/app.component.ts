@@ -44,6 +44,12 @@ export class AppComponent implements OnInit {
     for(let i=0;i<diamonds.length;i++){
       diamonds[i].className = diamonds[i].className.replace(/\bdiamond disabled\b/g, "unknown");
     }
+    let arrows = document.querySelectorAll(".arrow") as HTMLCollectionOf<HTMLElement>;
+    console.log(arrows.length);
+    for (let i = 0; i < arrows.length; i++) {
+      arrows[i].className = arrows[i].className.replace(/\barrow disabled\b/g, "unknown");
+      arrows[i].style.transform = "none";
+    }
   }
   
   minDistance(clicked_id) {
