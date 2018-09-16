@@ -81,6 +81,11 @@ export class AppComponent implements OnInit {
         }
       } else {
         var slope = this.hint(e.target.id);
+        let arrows = document.querySelectorAll(".arrow") as HTMLCollectionOf<HTMLElement>;
+        for (let i = 0; i < arrows.length; i++) {
+          arrows[i].className = arrows[i].className.replace(/\barrow disabled\b/g, "unknown");
+          arrows[i].style.transform = "none";
+        }
         e.target.className = "cell arrow disabled";
         e.target.style["boxShadow"] = 'none';
         e.target.style["border"] = 'none';
